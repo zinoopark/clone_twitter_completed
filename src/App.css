@@ -1,38 +1,255 @@
-.App {
-  text-align: center;
+:root{
+  --main-border-color: rgb(47, 51, 54);
+  --main-bg-color: rgb(0,0,0);
+  --main-icon-color: rgb(231, 233, 234);
+  font-size: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--main-icon-color);
+  
+}
+body{
+  background-color: var(--main-bg-color);
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+span{
+  color: gray;
+  font-weight: 300;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+i{
+  cursor: pointer;
+}
+
+
+.app-container{
+  display: flex;
+  width: max-content;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.icon-box {
+  padding: 20px;
+}
+
+.icon-box > svg{
+  height: 1.75rem;
+  width: 1.75rem;
+  color: rgb(231, 233, 234);
+
+}
+.icon-container{
+  display: flex;
+  flex-direction: column;
+}
+
+#twit-bird{
+  width: 2rem;
+  height: 2rem;
+  color: rgb(214, 217, 219);
+}
+
+.main-container{
+  width: 600px;
+  height: 100vh;
+  border: 1px solid var(--main-border-color);
+  /* padding-left: 16px;
+  padding-right: 16px; */
+  overflow-y: scroll;
+  position: relative;
+}
+
+.main-container__header{
+  color: var(--main-icon-color);
+  padding-left: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.65);
+  position: sticky;
+  top: 0;
+}
+
+.tweet-textarea {
+  display: flex;
+  width: 100%;
+  padding: 16px
+}
+.tweet-input-container{
+  width: 90%;
+  margin-left: 15px;
+}
+
+.tweet-textarea> img{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.tweet-textarea> div > textarea{
+  width: 100%;
+  font-size: 20px;
+  height: 150px;
+  background-color: var(--main-bg-color);
+  border: none;
+  color: inherit;
+  resize: none;
+  outline: none;
+  border-bottom: 1px solid var(--main-border-color);
+  margin-bottom: 16px;
+}
+.tweet-textarea >div> button{
+  display: block;
+  width: max-content;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 20px;
+  background-color: rgb(29, 155, 240);
+  color: var(--main-icon-color);
+  border: none;
+  margin-left: auto;
+}
+
+.tweet-textarea >div> button:hover{
+  background-color: rgb(19, 108, 168);
+  cursor: pointer;
+}
+
+.profile-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-container>img{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.bookmark-container{
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bookmark-container > img {
+  width: 300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bookmark-container > span{
+  color: gray;
 }
+.tweet-container{
+  list-style: none;
+  padding-left: 0;
+}
+
+
+.tweet-wrapper{
+  display: flex;
+  border-top: 1px solid var(--main-border-color);
+  border-bottom: 1px solid var(--main-border-color);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.tweet-img-wrapper{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.tweet-img-wrapper> img{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.tweet-text-wrapper
+{
+  width: 70%;
+}
+
+.tweet-username{
+  margin-bottom: 1em;
+}
+
+.tweet-username>span{
+  font-weight: 300;
+  font-size: 16px;
+  color: gray;
+}
+
+.icon-wrapper{
+  margin-left: 10px;
+  display: inline;
+}
+
+.tweet-icon-container{
+  width: max-content;
+  float: right;
+}
+
+.profile-bg{
+  background-color: gray;
+  width: 100%;
+  height: 250px;
+}
+
+.profile-img-container{
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  background-color: var(--main-bg-color);
+  position: relative;
+  top: 175px;
+  left: 25px;
+}
+.profile-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.spacer{
+  width: 100%;
+  height: 85px;
+}
+
+
+.profile-info{
+  margin-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.profile-info>div{
+  margin-top: 16px;
+}
+
