@@ -9,7 +9,10 @@ const Main = ({user,dummyTweets,setDummyTweets}) =>{
     setContent(event.target.value);
    }
    const handleSubmit = () =>{
-    if(content==='') return;
+    if(content==='') {
+        alert('내용을 입력해주세요');
+        return;
+    };
     const tweet = {
         id : uuid(),
         username : user.username,
